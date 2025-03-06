@@ -880,5 +880,13 @@ require('lazy').setup({
   },
 })
 
+-- ## SCRIPTS
+
+-- Require the script
+local grep_headers = require 'custom.scripts.grep_headers'
+
+-- Map it to a keybinding (e.g., <leader>h)
+vim.api.nvim_set_keymap('n', '<leader>h', "<cmd>lua require('custom.scripts.grep_headers').grep_headers()<CR>", { noremap = true, silent = true })
+
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
